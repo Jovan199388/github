@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="dissMiss()">
+        <ion-icon name="close" *ngIf="!platform.is('ios')"></ion-icon>
+        <ion-label *ngIf="platform.is('ios')">Close</ion-label>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>More Options</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="styled">
+  <div class="container">
+    <div *ngIf ="ismeal">
+    <h3>Size (required) </h3>
+      <ion-item lines="none" class="input-look" *ngFor="let entry of sizes">
+        <ion-checkbox slot="start"  (click)="checkedSize(entry)" [checked]="entry.isChecked" [(ngModel)]="entry.isChecked"></ion-checkbox>
+        <label>{{entry.name}}</label><label *ngIf ="entry.price > 0" slot="end">{{currency}} {{entry.price}}</label>
+      </ion-item>
+    </div>
+      <!--<ion-radio-group name="sizes">
+        <ion-list-header>
+          <ion-label>Sizes</ion-label>
+        </ion-list-header>
+        <ion-item *ngFor="let size of sizes" >
+          <ion-label>{{size.name}}</ion-label>
+          <ion-radio slot="end" value="{{size.id}}"   (click)="checkedSize(size)" [(ngModel)]="size"></ion-radio>
+        </ion-item>
+      </ion-radio-group> -->
+    <div *ngIf="ismeal">
+    <h3>Meal Drink (required) </h3>
+      <ion-item lines="none" class="input-look" *ngFor="let drink of drinks;">
+      <ion-checkbox slot="start" (click)="add(drink)"></ion-checkbox>
+      <label>{{drink.name}}</label>
+    </ion-item>
+  </div>
+
+  <h3 *ngIf = "ismeal">Addons (optional) </h3>
+  <h3 *ngIf = "!ismeal">Addons</h3>
+      <ion-item lines="none" class="input-look" *ngFor="let addon of addons;">
+      <ion-checkbox slot="start" (click)="adda(addon)"></ion-checkbox>
+      <label>{{addon.name}}</label><label *ngIf="addon.price > 0"  slot="end">{{currency}} {{addon.price}}</label>
+    </ion-item>
+    <ion-button (click)="onSubmit()" [disabled]="(this.Size == null && addons == null ) || (this.selectedAddons.length == 0)">Submit</ion-button>
+  </div>
+
+</ion-content>

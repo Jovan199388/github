@@ -1,0 +1,28 @@
+ion-item {
+    width : 100%;
+}
+
+ion-segment ion-segment-button {
+    --background: none !important;
+    --background-color: none !important;
+    --box-shadow: none !important;
+    --color : #3880ff !important;
+    --background-checked : #3880ff !important ;
+    --border-radius	: 50px !important;
+    --color-checked : white !important;
+    --padding-bottom : 15px;
+    --padding-end	: 15px;
+    --padding-start	: 15px;
+    --padding-top	: 15px;
+
+}
+
+ion-button {
+    --background : #3880ff !important;
+    --color : white;
+    width : 100%;
+}
+
+ion-radio {
+    --color-checked	: #3880ff !important;
+}

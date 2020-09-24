@@ -1,0 +1,19 @@
+{
+  "appId": "com.ordrUp.app",
+  "appName": "ORDR-UP",
+  "webDir": "www",
+  "npmClient": "npm",
+  "cordova": {
+    "preferences": {
+      "ScrollEnabled": "false",
+      "android-minSdkVersion": "22",
+      "BackupWebStorage": "none",
+      "SplashMaintainAspectRatio": "true",
+      "FadeSplashScreenDuration": "300",
+      "SplashShowOnlyFirstTime": "false",
+      "SplashScreen": "screen",
+      "SplashScreenDelay": "6000",
+      "WKWebViewOnly": "true"
+    }
+  }
+}
